@@ -1,0 +1,25 @@
+{
+  "name": "wyc-ref-finder",
+  "version": "1.0.0",
+  "description": "\"description\": \"Aplicación web sencilla para buscar referencias del catálogo WYC y facilitar la impresión de pegatinas y etiquetas para cajas, optimizando la gestión y el control en la producción de electrodos para depilación.\"",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliAlchemDev/wyc-ref-finder.git"
+  },
+  "author": "JuliAlchem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuliAlchemDev/wyc-ref-finder/issues"
+  },
+  "homepage": "https://github.com/JuliAlchemDev/wyc-ref-finder#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  }, 
+   "eslintConfig": {
+      "extends": "standard"
+    }
+}

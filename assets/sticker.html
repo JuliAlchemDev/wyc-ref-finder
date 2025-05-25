@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       body{ margin:0}
+        main {
+            margin: 30px 20px;
+            padding: 0px; 
+            height: 877px; 
+            width: 793.70px;
+          display: grid;
+          justify-content: center;
+          
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: repeat(1fr, 8);
+        }
+        section {
+            height: 140px;
+           
+        }
+        p { 
+            font-size:14px; font-family: Arial; margin-left: 10px;
+            text-transform: uppercase;
+        }
+    </style>
+   
+</head>
+<body>
+    
+    <main id="stickers">
+    </main>
+    <script type="module">
+        import catalogo from "./catalogo.js";
+
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get('product').toUpperCase();
+       
+        const getRef = (product) => {
+            return product.slice(0, 3).trim()
+           
+        }
+        const ref = getRef(product)
+        console.log(ref)
+
+
+        const needle = catalogo.find(prod => prod.ref === ref); 
+        if(needle.tipo === 'cónicas') {
+            needle.tipo = 'conical'
+        }
+        if(needle.tipo === "2 piezas"){
+             needle.tipo = `2p`
+        }
+        if(needle.metal === 'oro') {
+            needle.metal = 'gold'
+        }
+        if(needle.forma === 'rectas'){
+            needle.forma = 'straight'
+        }
+        if(needle.forma === 'inclinadas'){
+            needle.forma = 'inclined'
+        }
+
+        const sticker  = document.getElementById('stickers')
+        console.log(needle)
+        for (let i = 0; i < 16; i++){
+            
+            sticker.innerHTML += `
+
+             <section>
+        <p><b>REF:     &emsp;    ${needle.ref}</b></p> 
+        <p>ELEC. DEP. EST.</p>
+        <p>${needle.tipo} ${needle.grosorCono} ${needle.tipo === '2p' ? 'TYPO' : '&#8470;'} ${needle.grosorPunta2} ${needle.metal} ${needle.forma}</p>
+             </section>
+            `
+        }
+    </script>
+</body>
+</html>

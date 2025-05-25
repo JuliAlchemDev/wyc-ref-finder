@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+    <style>
+        body {margin:0; padding: 0; box-sizing: border-box;}
+        main{font-family: arial; text-transform: uppercase;}
+        section {
+            font-size: 10px;
+            width: max-content;
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 450px;
+            left: 40px;
+            transform: rotate(-90deg);
+        }
+        p{margin:2px}
+    </style>
+</head>
+<body>
+    <main id="box">
+    </main>
+    <script type="module">
+        import catalogo from "./catalogo.js";
+        
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get('product').toUpperCase();
+       console.log(product)
+        const getRef = (product) => {
+            return product.slice(0, 3).trim()
+           
+        }
+        const ref = getRef(product)
+        console.log(ref)
+
+
+        // GET DATE
+const date = new Date()
+const month = date.getMonth()+1
+const year = date.getFullYear();
+
+let productionDate = `${month <10 ? `0${month}`: `${month}`}/${year}`
+let expirationDate = `${month <10 ? `0${month}`: `${month}`}/${year +5 }`
+
+console.log('Production date: ' + productionDate)
+console.log('Expiration date: ' + expirationDate)
+// END GET DATE
+
+        const needle = catalogo.find(prod => prod.ref === ref); 
+        if(needle.tipo === 'cónicas') {
+            needle.tipo = 'CONICAL'
+        }
+        if(needle.tipo === "2 piezas"){
+             needle.tipo = `two pieces`
+        }
+        if(needle.metal === 'oro') {
+            needle.metal = 'gold'
+        }
+        if(needle.forma === 'rectas'){
+            needle.forma = 'straight'
+        }
+        if(needle.forma === 'inclinadas'){
+            needle.forma = 'inclined'
+        }
+
+        const box  = document.getElementById('box')
+        console.log(needle)
+      
+            
+            box.innerHTML += `
+
+             <section>
+                <p><b>REF: ${needle.ref}</b> ${productionDate} - ${expirationDate}</bold></p>
+                <p>${needle.tipo} ${needle.grosorCono}${needle.grosorPunta1} ${needle.metal} ${needle.forma}</p>
+             </section>
+            `
+        
+    </script>
+</body>
+</html>

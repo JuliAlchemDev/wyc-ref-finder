@@ -1,0 +1,114 @@
+/* Custom properties */
+:root {
+  --clr-font: white;
+  --clr-bg: #181818;
+  --clr-wyc: rgb(33, 63, 102);
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  /* vertical-align: baseline;  */
+}
+body {
+  display: grid;
+  gap: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+  background: var(--clr-wyc);
+  border-bottom: 5px solid white;
+  outline: 10px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+input {
+  width: 60%;
+  padding: 0.7rem;
+  line-height: 1rem;
+  border-radius: 20px;
+  border: none;
+  appearance: none;
+  border-radius: 50px;
+  background: #213f66;
+  box-shadow: inset 14px 14px 28px #1c3657, inset -14px -14px 28px #264875;
+  font-size: 1.5rem;
+  text-align: center;
+}
+input::placeholder {
+  color: #ffffff;
+}
+input:focus {
+  outline: 2px solid white;
+  color: var(--clr-bg);
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: inset 8px 8px 16px #d9d9d9, inset -8px -8px 16px #ffffff;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 500px;
+}
+
+section#content {
+  display: grid;
+
+  gap: 0.5rem;
+  color: var(--clr-wyc);
+  font-size: 1.2rem;
+}
+p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem;
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: inset 10px 10px 30px #d9d9d9, inset -10px -10px 30px #ffffff;
+}
+main h2 {
+  font-size: 5rem;
+}
+p#description {
+  box-shadow: none;
+  padding: 0;
+  font-size: 2rem;
+}
+div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+button.box-btn,
+button.stiker-btn {
+  background-color: #181818;
+  width: 40px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 0 #d9d9d9;
+  color: white;
+  font-size: 0.7rem;
+}
+button.stiker-btn {
+  background-color: transparent;
+  background-image: url("/assets/sticker.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+}
+button:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}

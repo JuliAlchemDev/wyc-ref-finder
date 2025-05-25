@@ -1,0 +1,119 @@
+/* Custom properties */
+:root {
+    --font-color: #181818;
+    --background-color: #f0f0f0;
+}
+/* Typography */
+:root {
+    --font-primary: Helvetica, Arial, sans-serif;
+    --font-secondary: Verdana;
+}
+
+/* Media Switch Colors */
+/* Dark mode */
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --font-color: #f0f0f0;
+        --background-color: #181818;
+    }
+} */
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --font-color: black;
+        --background-color: white;
+    }
+}
+
+/* Optional |No Animation|
+@media (prefers-reduce-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+    }
+} */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline; /* Check me late! */
+}
+/* Img problem solution */
+img, picture, video, iframe, figure {
+    max-width: 100%; /* Relative to parent */
+    width: 100%; 
+    display: block;
+    /* optional  object-fit: cover; */
+}
+/* Links problem solution */
+a {
+    display: block;
+}
+p, a {
+    display: inline;
+}
+/* Lists */
+li {
+    list-style-type: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Text */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+    content: '';
+    content: none;
+}
+/* Text selected */
+::selection {
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+/* Form */
+form, input, textarea, select, button, label {
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+    /* optional appearance: none; */
+}
+/* Tables */
+table, tr, td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* SVG */
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+/* Typography all page */
+body {
+    min-height: 100vh;
+    font-size: 100%; /* Respect the user's modifications */
+    font-family: var(--font-primary);
+    color: var(--font-color);
+    background-color: var(--background-color);
+    /* optional */ line-height: 1.4em;
+    /* optional */ hyphens: auto;
+    
+    /* optional 
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    */
+}
