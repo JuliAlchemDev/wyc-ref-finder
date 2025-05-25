@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/JuliAlchemDev/wyc-ref-finder/issues"
   },
-  "homepage": "https://github.com/JuliAlchemDev/wyc-ref-finder#readme",
+  "homepage": "https://github.com/JuliAlchemDev/wyc-ref-finder",
   "devDependencies": {
     "standard": "^17.1.2"
   }, 
