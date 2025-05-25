@@ -23,60 +23,56 @@
     <main id="box">
     </main>
     <script type="module">
-        import catalogo from "./catalogo.js";
-        
-        const params = new URLSearchParams(window.location.search);
-        const product = params.get('product').toUpperCase();
-       console.log(product)
-        const getRef = (product) => {
-            return product.slice(0, 3).trim()
-           
-        }
-        const ref = getRef(product)
-        console.log(ref)
+       import catalogo from './catalogo.js'
 
+const params = new URLSearchParams(window.location.search)
+const product = params.get('product').toUpperCase()
 
-        // GET DATE
+const getRef = (product) => {
+  return product.slice(0, 3).trim()
+}
+const ref = getRef(product)
+
+// GET DATE
 const date = new Date()
-const month = date.getMonth()+1
-const year = date.getFullYear();
+const month = date.getMonth() + 1
+const year = date.getFullYear()
 
-let productionDate = `${month <10 ? `0${month}`: `${month}`}/${year}`
-let expirationDate = `${month <10 ? `0${month}`: `${month}`}/${year +5 }`
+const productionDate = `${month < 10 ? `0${month}` : `${month}`}/${year}`
+const expirationDate = `${month < 10 ? `0${month}` : `${month}`}/${year + 5}`
 
 console.log('Production date: ' + productionDate)
 console.log('Expiration date: ' + expirationDate)
 // END GET DATE
 
-        const needle = catalogo.find(prod => prod.ref === ref); 
-        if(needle.tipo === 'cónicas') {
-            needle.tipo = 'CONICAL'
-        }
-        if(needle.tipo === "2 piezas"){
-             needle.tipo = `two pieces`
-        }
-        if(needle.metal === 'oro') {
-            needle.metal = 'gold'
-        }
-        if(needle.forma === 'rectas'){
-            needle.forma = 'straight'
-        }
-        if(needle.forma === 'inclinadas'){
-            needle.forma = 'inclined'
-        }
+const needle = catalogo.find(prod => prod.ref === ref)
+if (needle.tipo === 'cónicas') {
+  needle.tipo = 'CONICAL'
+}
+if (needle.tipo === '2 piezas') {
+  needle.tipo = 'two pieces'
+}
+if (needle.metal === 'oro') {
+  needle.metal = 'gold'
+}
+if (needle.forma === 'rectas') {
+  needle.forma = 'straight'
+}
+if (needle.forma === 'inclinadas') {
+  needle.forma = 'inclined'
+}
 
-        const box  = document.getElementById('box')
-        console.log(needle)
-      
-            
-            box.innerHTML += `
+const box = document.getElementById('box')
+console.log(needle)
+
+box.innerHTML += `
 
              <section>
                 <p><b>REF: ${needle.ref}</b> ${productionDate} - ${expirationDate}</bold></p>
                 <p>${needle.tipo} ${needle.grosorCono}${needle.grosorPunta1} ${needle.metal} ${needle.forma}</p>
              </section>
             `
-        
+
     </script>
 </body>
 </html>
