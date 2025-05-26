@@ -358,7 +358,7 @@ search.addEventListener('input', () => {
       const params = new URLSearchParams({
         product: result
       })
-      window.location.href = `/assets/sticker.html?${params.toString()}`
+      window.location.href = `assets/sticker.html?${params.toString()}`
     })
 
     const boxBtn = document.createElement('button')
@@ -371,7 +371,7 @@ search.addEventListener('input', () => {
       const params = new URLSearchParams({
         product: result
       })
-      window.location.href = `/assets/box.html?${params.toString()}`
+      window.location.href = `assets/box.html?${params.toString()}`
     })
   })
 
