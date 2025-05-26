@@ -7,10 +7,10 @@
 ## 👀 Vista previa
 <section style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
 <h3> 🔍 Buscar</h3>
-<h3> 📦 Box</h3>
-<h3>🏷️ Sticker</h3>
 <img src="screenshots/search.png" alt="Search" width="300" height="300"/>
+<h3> 📦 Box</h3>
 <img src="screenshots/box.png" alt="Box" width="300" height="300"/>
+<h3>🏷️ Sticker</h3>
 <img src="screenshots/sticker.png" alt="Box" width="300" height="300"/>
 </section>
 
