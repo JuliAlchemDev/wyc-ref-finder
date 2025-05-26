@@ -102,7 +102,7 @@ button.stiker-btn {
 }
 button.stiker-btn {
   background-color: transparent;
-  background-image: url("assets/sticker.png");
+  background-image: url("sticker.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
